@@ -1,0 +1,6 @@
+__pycache__/
+myvenv/
+config.py
+
+backup
+syslog
