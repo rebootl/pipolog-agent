@@ -20,9 +20,9 @@ $ pip install aiohttp[speedups]
 
 /etc/rsyslog.conf
 
- # pipe
- Module (load="builtin:ompipe")
- *.* action(type="ompipe" Pipe="/home/cem/pipolog-agent/syslog")
+    # pipe
+    Module (load="builtin:ompipe")
+    *.* action(type="ompipe" Pipe="/home/cem/pipolog-agent/syslog")
 
 ## Systemd service
 
