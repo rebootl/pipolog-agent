@@ -7,14 +7,20 @@ the pipolog server via http(s).
 
 ## Setup
 
-create virtual env.
+create virtual env.:
 
-$ python3 -m venv myvenv
+    $ python3 -m venv myvenv
 
-$ source myvenv/bin/activate
+    $ source myvenv/bin/activate
 
-$ pip install aiofiles
-$ pip install aiohttp[speedups]
+    $ pip install aiofiles
+    $ pip install aiohttp[speedups]
+
+create pipe(s) for output:
+
+    $ mkfifo syslog
+    $ chmod 666 syslog # if needed
+    $ mkfifo foo
 
 ## Configure rsyslog to output to pipe
 
