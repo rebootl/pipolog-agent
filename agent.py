@@ -26,9 +26,9 @@ else:
 async def post_data(api_url, data):
     async with aiohttp.ClientSession(headers=headers) as session:
         try:
-            async with session.post(api_url, json=data, ssl=ssl) as response:
-            #r = await session.post(API_URL, json=data)
-                print(response)
+            await session.post(api_url, json=data, ssl=ssl)
+            #async with session.post(api_url, json=data, ssl=ssl) as response:
+            #    print(response)
         except OSError as e:
             print("OSERROR: ", e)
 

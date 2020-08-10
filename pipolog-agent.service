@@ -1,0 +1,19 @@
+[Unit]
+Description=Agent for pipolog
+Documentation=https://github.com/rebootl/pipolog-agent
+
+After=network.target
+Requires=network.target
+
+[Service]
+User=user
+Environment="WD=/home/user/pipolog-agent"
+WorkingDirectory=${WD}
+ExecStart=${WD}/myvenv/bin/python ${WD}/agent.py
+
+# Restart w/ timeout
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target
