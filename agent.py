@@ -50,7 +50,7 @@ async def read_pipe(pipe_def):
                 data = await afp.readline()
                 if len(data) == 0:
                     break
-                print(data, end = '')
+                #print(data, end = '')
                 await prepare_logdata(
                     'logline',
                     pipe_def['name'],
