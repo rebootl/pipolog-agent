@@ -7,9 +7,8 @@ Requires=network.target
 
 [Service]
 User=user
-Environment="WD=/home/user/pipolog-agent"
-WorkingDirectory=${WD}
-ExecStart=${WD}/myvenv/bin/python ${WD}/agent.py
+WorkingDirectory=/home/user/pipolog-agent
+ExecStart=/home/user/pipolog-agent/myvenv/bin/python /home/user/pipolog-agent/agent.py
 
 # Restart w/ timeout
 Restart=always
