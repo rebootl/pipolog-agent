@@ -24,12 +24,20 @@ create pipe(s) for output:
 
 ## Configure rsyslog to output to pipe
 
-/etc/rsyslog.conf
+`/etc/rsyslog.conf`
 
     # pipe
     Module (load="builtin:ompipe")
     *.* action(type="ompipe" Pipe="/home/cem/pipolog-agent/syslog")
 
+## Output to multiple files/pipes
+
+Example:
+
+    backup.sh 2>&1 | tee ./backup.log ../pipolog-agent/backup-fifo > /dev/null
+
 ## Systemd service
 
-[Todo]
+Install service file: `pipolog-agent.service`
+
+Copy to `/etc/systemd/system/`.
